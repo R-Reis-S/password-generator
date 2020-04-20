@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password-Generate</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="css/sigin.css" rel="stylesheet">
+  </head>
+  <body>
+      <body class="text-center">
+          <form class="form-signin">
+        <img class="mb-4" src="/https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Password Generator</h1>
+
+        <label for="length">How many digits?</label>
+        <input type="range" class="custom-range" value="20" min="3" max="30" id="length">
+        <h2 id="showLength"></h2>Digits
+  
+        <label for="passwordResult" class="sr-only">Password</label>
+        <input type="text" id="passwordResult" class="form-control" placeholder="Password Result" required>
+        <div class="container text-left">
+
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" checked id="numbers">
+            <label class="custom-control-label" for="numbers">Numbers</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" checked  id="lowercase">
+            <label class="custom-control-label" for="lowercase">Lowercase</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" checked id="uppercase">
+            <label class="custom-control-label" for="uppercase">Uppercase</label>
+          </div>
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" checked id="specials">
+            <label class="custom-control-label" for="specials">Specials charaters</label>
+          </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" id="submit" type="submit">Generate</button>
+        <button class="btn btn-lg btn-danger btn-block" id="clear" type="button">Clear</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+      </form>
+    <form action="#">
+
+    </form>
+    <script type="module" src="index.js"></script>
+    <script>
+      (function(){
+        const range = document.querySelector('#length')
+        const p = document.querySelector('#showLength')
+        p.textContent = range.value
+
+        range.addEventListener('change', (e) => {
+          p.textContent = range.value
+        })
+      })()
+    </script>
+  </body>
+</html>
